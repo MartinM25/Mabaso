@@ -2,7 +2,6 @@ import GradientButton from "../components/GradientButton";
 import TypingEffect from "../components/TypingEffect";
 import React from "react";
 
-
 const HeroSection = () => {
   return (
     <section className="relative font-sans">

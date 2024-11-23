@@ -1,6 +1,5 @@
 import React from 'react';
 import Image from 'next/image';
-
 import { cardInfo } from "../constants";
 import GradientButton from '../components/GradientButton';
 

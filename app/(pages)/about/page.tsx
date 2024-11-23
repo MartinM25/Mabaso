@@ -55,19 +55,20 @@ const page = () => {
           <div className='py-6 lg:py-0'>
             <h2 className='text-3xl font-bold'>Who is Ayanda Mabaso?</h2>
 
-            <div className='font-normal text-base space-y-4 pt-6'>
+            <div className="font-normal text-base space-y-4 pt-6">
               <p>
                 Ayanda Mabaso is an emerging voice in the digital space: a passionate public speaker, a creative content creator, and a dedicated social media manager.
               </p>
 
               <p>
-                Though he's still early in his journey, Ayanda's already making an impact by helping others refine their strategies and grow their brands. He’s not just talking about success; he’s actively shaping it with his insights and unique approach.
+                Though he&apos;s still early in his journey, Ayanda&apos;s already making an impact by helping others refine their strategies and grow their brands. He&apos;s not just talking about success; he&apos;s actively shaping it with his insights and unique approach.
               </p>
 
               <p>
                 As he continues to build his platform, Ayanda is proving that fresh ideas and practical strategies can spark real change. His work is just getting started, and the potential is clear.
               </p>
             </div>
+
           </div>
         </div>
       </div>

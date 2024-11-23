@@ -23,7 +23,7 @@ const AboutSection = () => {
           </p>
           <blockquote>
             <p className="italic mb-2">
-              "You have the time; you just need to learn how to prioritize."
+              &quot;You have the time. you just need to learn how to prioritize.!&quot;
             </p>
             <footer className="text-sm text-gray-400">Ayanda Mabaso</footer>
           </blockquote>

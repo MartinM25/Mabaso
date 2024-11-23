@@ -32,7 +32,7 @@ const page = () => {
           <h2 className="text-4xl font-bold">Get In Touch</h2>
           <div className="flex flex-col py-12">
             <div className='py-2 items-center'>
-              <h2 className='font-bold text-lg'>Email US:</h2>
+              <h2 className='font-bold text-lg'>Email Us:</h2>
               <p className=" text-sm md:text-base">biz@mabasomedia.co.za</p>
             </div>
             <div className='py-2 items-center'>
