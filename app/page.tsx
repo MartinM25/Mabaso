@@ -11,7 +11,7 @@ export default function Home() {
         <h2 className="text-4xl font-bold mb-4">About Ayanda</h2>
         <div className="font-normal text-lg">
           <p className="">Welcome to the official site of Ayanda Mabaso</p>
-          <p className="mb-4">Get to know one of South Africa's content creator | public speaker</p>
+          <p className="mb-4">Get to know one of South Africa&apos;s content creator | public speaker</p>
         </div>
       </div>
 

@@ -11,7 +11,7 @@ import {
 } from "@/components/ui/form";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 // import { useEffect, useState } from "react";
-import { useRouter } from 'next/navigation';
+// import { useRouter } from 'next/navigation';
 import { useForm } from "react-hook-form";
 import { Input } from "@/components/ui/input";
 // import { Button } from "@/components/ui/button";
@@ -43,8 +43,6 @@ type FormValues = z.infer<typeof formSchema>;
 const BookingForm = () => {
   // const [loading, setLoading] = useState(false);
   // const [submitted, setSubmitted] = useState(false);
-
-  const router = useRouter();
 
   const {
   } = useForm<FormValues>({

@@ -46,7 +46,7 @@ const page = () => {
             Ayanda Mabaso is a content creator who helps individuals and businesses tell their stories through engaging, creative content. With a focus on detail and creativity, he delivers impactful visuals and messages that resonate with audiences.
           </p>
           <p>
-            Believing in the power of storytelling, Ayanda tailors his content for each platform, whether it&apos;s Instagram, LinkedIn, or TikTok, ensuring it aligns with his clients' goals and brand identity.
+            Believing in the power of storytelling, Ayanda tailors his content for each platform, whether it&apos;s Instagram, LinkedIn, or TikTok, ensuring it aligns with his clients&apos; goals and brand identity.
           </p>
           <p>
             His commitment to creating quality content goes beyond aesthetics—he focuses on building trust and fostering community, earning respect and growing his following across platforms.
