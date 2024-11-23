@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 const page = () => {
   return (
     <div>
-      <PageHeading text='Contact' imageUrl='/contact.jpg' />
+      <PageHeading text='Contact' imageUrl='/contact.JPG' />
       <div className='flex flex-col md:flex-row lg:px-28'>
         <div className='w-full md:w-[50%] px-12 pt-16 md:px-6'>
           <h2 className="text-4xl font-bold">Get In Touch</h2>

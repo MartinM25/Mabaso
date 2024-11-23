@@ -23,7 +23,7 @@ export const metadata: Metadata = {
 const page = () => {
   return (
     <div>
-      <PageHeading text='Book Ayanda' imageUrl='/contact.jpg' />
+      <PageHeading text='Book Ayanda' imageUrl='/contact.JPG' />
       <BookingForm />
     </div>
   )
