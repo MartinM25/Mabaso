@@ -33,7 +33,7 @@ const images = [
 const page = () => {
   return (
     <div className='font-sans'>
-      <PageHeading text='About Ayanda' imageUrl='/about.jpg' />
+      <PageHeading text='About Ayanda' imageUrl='/about.JPG' />
 
       <div className='flex w-full bg-black py-6 text-white justify-between'>
         <div className='w-full text-center'>

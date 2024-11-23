@@ -57,17 +57,17 @@ export const socialLinks = [
 export const cardInfo = [
   {
     id: 1,
-    image: "/1.jpg",
+    image: "/1.JPG",
     details: "Content Creator",
   },
   {
     id: 2,
-    image: "/2.jpg",
+    image: "/2.JPG",
     details: "Public Speaker",
   },
   {
     id: 3,
-    image: "/3.jpg",
+    image: "/3.JPG",
     details: "Social Media Manager",
   },
 ]
