@@ -40,7 +40,6 @@ type FormValues = z.infer<typeof formSchema>;
 const ContactForm = () => {
   const [error, setError] = useState(false);
   const [loading, setLoading] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
   const [alertMessage, setAlertMessage] = useState("");
 
   const {
@@ -78,7 +77,6 @@ const ContactForm = () => {
       );
 
       if (result.status === 200) {
-        setSubmitted(true);
         setAlertMessage("Email sent successfully!");
 
         form.reset();
