@@ -23,32 +23,22 @@ export const navItems = [
 
 export const socialLinks = [
   {
-    href: "",
+    href: "https://www.facebook.com/share/1Et2f6Qp8J/?mibextid=LQQJ4d",
     name: "facebook",
     icon: "/Icons/facebook.png"
   },
   {
-    href: "",
+    href: "https://www.instagram.com/mabaso_media/profilecard/?igsh=MWFuaXgxb3dsbWJ6dA==",
     name: "instagram",
     icon: "/Icons/instagram.png"
   },
   {
-    href: "",
+    href: "https://www.tiktok.com/@mabasomedia?_t=8riKRxcXYfA&_r=1",
     name: "tik-tok",
     icon: "/Icons/tik-tok.png"
   },
   {
-    href: "",
-    name: "x",
-    icon: "/Icons/twitter.png"
-  },
-  {
-    href: "",
-    name: "linkedin",
-    icon: "/Icons/linkedin.png"
-  },
-  {
-    href: "",
+    href: "https://youtube.com/@ayandamabasomarketing?si=f6PwerY4ywkVeQXd",
     name: "youtube",
     icon: "/Icons/youtube.png"
   },

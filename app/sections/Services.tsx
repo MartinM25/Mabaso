@@ -5,9 +5,9 @@ import GradientButton from '../components/GradientButton';
 
 const ServicesSection = () => {
   return (
-    <section className='w-full py-10 lg:px-28 bg-white cursor-pointer'>
+    <section className='w-full py-10 px-6 lg:px-28 bg-white cursor-pointer'>
       <div className="text-center">
-        <h2 className="text-4xl font-bold mb-4">What Ayanda has to Offer</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">What Ayanda has to Offer</h2>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-3 pt-10 md:gap-2">
         {cardInfo.map((card) => (

@@ -1,6 +1,17 @@
 "use client"
 
+// 
+
 import * as z from "zod";
+import { useState } from "react";
+import emailjs from '@emailjs/browser';
+import { useForm } from "react-hook-form";
+import { Input } from "@/components/ui/input";
+import GradientButton from "./GradientButton";
+import { Textarea } from "@/components/ui/textarea";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
 import {
   Form,
   FormControl,
@@ -9,16 +20,6 @@ import {
   FormLabel,
   FormMessage
 } from "@/components/ui/form";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-// import { useEffect, useState } from "react";
-// import { useRouter } from 'next/navigation';
-import { useForm } from "react-hook-form";
-import { Input } from "@/components/ui/input";
-// import { Button } from "@/components/ui/button";
-import { Textarea } from "@/components/ui/textarea"
-import { zodResolver } from "@hookform/resolvers/zod";
-// import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert"
-import GradientButton from "./GradientButton";
 
 
 const formSchema = z.object({
@@ -41,8 +42,10 @@ const formSchema = z.object({
 type FormValues = z.infer<typeof formSchema>;
 
 const BookingForm = () => {
-  // const [loading, setLoading] = useState(false);
-  // const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+  const [alertMessage, setAlertMessage] = useState("");
 
   const {
   } = useForm<FormValues>({
@@ -51,37 +54,55 @@ const BookingForm = () => {
 
   const form = useForm<FormValues>({
     resolver: zodResolver(formSchema),
-    // defaultValues: {
-    //   fullName: "",
-    //   email: "",
-    //   subject: "",
-    //   message: "",
-    // }
+    defaultValues: {
+      fullName: "",
+      email: "",
+      type: "talk",
+      message: "",
+    }
   })
 
   const handleSubmit = async (FormData: z.infer<typeof formSchema>) => {
-    console.log(FormData);
 
-    // try {
-    //   setLoading(true);
-    //   const res = await fetch("/api/sendEmail", {
-    //     method: "POST",
-    //     headers: { "Content-Type": "application/json" },
-    //     body: JSON.stringify(FormData),
-    //   });
+    try {
+      setLoading(true);
+      setError(false);
+      setAlertMessage("");
 
-    //   if (!res.ok) {
-    //     throw new Error("Something went wrong");
-    //   }
-    //   setSubmitted(true);
-    //   router.push('/confirmation')
-    // } catch (err) {
-    //   console.error(err);
-    // }
-    // finally {
-    //   setLoading(false);   
-    // }
-  }
+      const result = await emailjs.send(
+        process.env.NEXT_PUBLIC_SERVICE_ID!,
+        process.env.NEXT_PUBLIC_BOOKING_TEMPLATE_ID!,
+        {
+          fullName: FormData.fullName,
+          email: FormData.email,
+          type: FormData.type,
+          message: FormData.message,
+        },
+        process.env.NEXT_PUBLIC_EMAILJS_USER_ID,
+      );
+
+      if (result.status === 200) {
+        setSubmitted(true);
+        setAlertMessage("Email sent successfully!");
+
+        form.reset();
+      } else {
+        throw new Error("Failed to send email");
+      }
+    } catch (err) {
+      console.error(err);
+      setError(true);
+      setAlertMessage("Something went wrong. Please try again.");
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const handleInputChange = () => {
+    if (alertMessage) {
+      setAlertMessage("");
+    }
+  };
 
   return (
     <div className="w-full font-sans p-6 md:px-56 lg:px-96">
@@ -102,6 +123,10 @@ const BookingForm = () => {
                       placeholder="Full Name"
                       type="text"
                       {...field}
+                      onChange={(e) => {
+                        field.onChange(e);
+                        handleInputChange();
+                      }}
                     />
                   </FormControl>
                   <FormMessage />
@@ -121,6 +146,10 @@ const BookingForm = () => {
                       placeholder="Email Address"
                       type="email"
                       {...field}
+                      onChange={(e) => {
+                        field.onChange(e);
+                        handleInputChange();
+                      }}
                     />
                   </FormControl>
                   <FormMessage />
@@ -182,6 +211,10 @@ const BookingForm = () => {
                       placeholder="Leave us a message"
                       className="resize-none"
                       {...field}
+                      onChange={(e) => {
+                        field.onChange(e);
+                        handleInputChange();
+                      }}
                     />
                   </FormControl>
                   <FormMessage />
@@ -189,9 +222,24 @@ const BookingForm = () => {
               )
             }}
           />
-          <GradientButton text="Submit" type="submit" />
 
-          {/* <GradientButton text="Submit" type="submit" loading={loading} /> */}
+          {alertMessage && (
+            <Alert
+              className={error ? "" : "border-green-500 text-green-600"}
+              variant={error ? "destructive" : "default"}
+            >
+              <AlertTitle>{error ? "Error" : "Success"}</AlertTitle>
+              <AlertDescription>{alertMessage}</AlertDescription>
+            </Alert>
+          )}
+
+          <GradientButton
+            text="Send"
+            type="submit"
+            loading={loading}
+            disabled={loading || !form.formState.isValid}
+          />
+
         </form>
       </Form>
     </div>

@@ -52,7 +52,7 @@ const Footer = () => {
                 <Phone width={20} height={20} color="white" />
                 <p>+27 626 865 982</p>
               </div>
-              <div className="flex items-center justify-center md:justify-between gap-2 pt-4">
+              <div className="flex items-center justify-center md:justify-start gap-6 pt-4">
                 {socialLinks.map((link) => (
                   <Link href={link.href} key={link.name}>
                     <Image
