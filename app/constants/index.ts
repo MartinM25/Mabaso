@@ -23,12 +23,12 @@ export const navItems = [
 
 export const socialLinks = [
   {
-    href: "https://www.facebook.com/share/1Et2f6Qp8J/?mibextid=LQQJ4d",
+    href: "https://www.facebook.com/share/1XRGBNxm8w/?mibextid=wwXIfr",
     name: "facebook",
     icon: "/Icons/facebook.png"
   },
   {
-    href: "https://www.instagram.com/mabaso_media/profilecard/?igsh=MWFuaXgxb3dsbWJ6dA==",
+    href: "https://www.instagram.com/ayandamabaso_official/profilecard/?igsh=MXhidHE0MDFydXoxNA==",
     name: "instagram",
     icon: "/Icons/instagram.png"
   },
@@ -41,6 +41,16 @@ export const socialLinks = [
     href: "https://youtube.com/@ayandamabasomarketing?si=f6PwerY4ywkVeQXd",
     name: "youtube",
     icon: "/Icons/youtube.png"
+  },
+  {
+    href: "https://www.linkedin.com/in/ayanda-mabaso-7b0a35330?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app",
+    name: "linkedIn",
+    icon: "/Icons/linkedin.png"
+  },
+  {
+    href: "https://x.com/ayanda_mabaso_?s=21",
+    name: "X",
+    icon: "/Icons/twitter.png"
   },
 ];
 
